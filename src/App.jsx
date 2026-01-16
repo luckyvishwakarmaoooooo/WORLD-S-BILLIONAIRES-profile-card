@@ -1,12 +1,21 @@
-import React from 'react'
-import Profile from './assets/components/profile.jsx'
+// Import routing components
+import { Routes, Route } from "react-router-dom";
+
+// Import pages
+import Profile from "./assets/components/profile";
+import Details from "./assets/components/Details";
 
 const App = () => {
   return (
-    <div>
-      <Profile />
-    </div>
-  )
-}
+    // Routes decides which component to show
+    <Routes>
+      {/* Home / Card page */}
+      <Route path="/" element={<Profile />} />
 
-export default App
+      {/* Details page */}
+      <Route path="/details" element={<Details />} />
+    </Routes>
+  );
+};
+
+export default App;
